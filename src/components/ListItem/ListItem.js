@@ -20,7 +20,7 @@ const ListItem = ({ image, name, description, twitterLink }) => {
 export default ListItem;
 
 ListItem.propTypes = {
-  image: PropTypes.number.isRequired,
+  image: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   twitterLink: PropTypes.string.isRequired,
