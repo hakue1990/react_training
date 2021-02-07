@@ -7,7 +7,7 @@ export const twitterAccounts = [
   {
     image: danAbranovImage,
     name: "Dan Abramov",
-    description: "Working on react.js - demo guy",
+    // description: "Working on react.js - demo guy",
     twitterLink: "https://twitter.com/dan_abramov",
   },
   {
