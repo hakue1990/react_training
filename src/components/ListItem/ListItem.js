@@ -14,6 +14,7 @@ const ListItem = ({ image, name, description, twitterLink }) => {
         </a>
       </div>
     </li>
+
   );
 };
 

@@ -8,7 +8,7 @@ const initialItems = [
   {
     image: 'https://avatars.githubusercontent.com/u/810438?s=460&u=36b11d1db9c2380295b4371a98de87ab6b4c898f&v=4',
     name: "Dan Abramov",
-    // description: "Working on react.js - demo guy",
+    description: "Working on react.js - demo guy",
     twitterLink: "https://twitter.com/dan_abramov",
   },
   {
@@ -41,19 +41,20 @@ class App extends React.Component {
     e.preventDefault();
 
     const newItem = {
-      mage: e.target[0].value,
-      name: e.target[1].value,
-      description: e.target[2].value,
-      twitterLink: e.target[3].value,
+      name: e.target[0].value,
+      twitterLink: e.target[1].value,
+      image: e.target[2].value,
+      description: e.target[3].value,
     }
+    console.log(newItem);
     this.setState({
       items: [...this.state.items, newItem]
     })
-
+    e.target.reset();
   }
   render() {
     return (
-      <div>
+      <div className='App__wrapper'>
         <ListWrapper items={this.state.items} />
         <Form submitFn={this.addItem} />
       </div>
