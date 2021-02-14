@@ -2,15 +2,18 @@ import React from 'react';
 import "./Form.css";
 
 
-const Form = ({ submitFn }) => {
+const Form = (props) => {
     return (
-        <form onSubmit={submitFn} className='Form__wrapper'>
-            <input placeholder='name' name='name' />
-            <input placeholder='link' link='link' />
-            <input placeholder='image' image='image' />
-            <textarea placeholder='description' description='description' />
-            <button type='submit'>add item</button>
-        </form>
+        <>
+            <form autoComplete="off" onSubmit={props.submitFn} className='Form__wrapper'>
+                <h2>add new twitter account</h2>
+                <input required placeholder='name' name='name' />
+                <input required placeholder='link' link='link' />
+                <input placeholder='image' image='image' />
+                <textarea required placeholder='description' description='description' />
+                <button type='submit'>add item</button>
+            </form>
+        </>
     );
 }
 

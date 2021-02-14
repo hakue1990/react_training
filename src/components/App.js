@@ -39,18 +39,16 @@ class App extends React.Component {
   }
   addItem = (e) => {
     e.preventDefault();
-
     const newItem = {
       name: e.target[0].value,
-      twitterLink: e.target[1].value,
+      link: e.target[1].value,
       image: e.target[2].value,
       description: e.target[3].value,
     }
-    console.log(newItem);
     this.setState({
       items: [...this.state.items, newItem]
     })
-    e.target.reset();
+    e.target.reset()
   }
   render() {
     return (
