@@ -3,6 +3,8 @@
   display: flex;
   align-items: center;
   margin-bottom: 50px;
+  animation: drop 0.5s ease;
+  position: relative;
 }
 
 .listItem__image {

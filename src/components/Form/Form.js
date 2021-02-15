@@ -17,7 +17,7 @@ const Form = (props) => {
           placeholder="description"
           description="description"
         />
-        <button type="submit">add itaem</button>
+        <button type="submit">add item</button>
       </form>
     </>
   );
