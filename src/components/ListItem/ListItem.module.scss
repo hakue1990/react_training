@@ -1,0 +1,43 @@
+.wrapper {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  margin-bottom: 50px;
+  animation: drop 0.5s ease;
+  position: relative;
+
+  .image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-right: 30px;
+  }
+
+  .name {
+    font-weight: 600;
+    color: blue;
+    margin: 8px;
+  }
+
+  .description {
+    font-weight: 300;
+    margin-bottom: 20px;
+  }
+
+
+  .button {
+    padding: 10px;
+    background: transparent;
+    border: 2px solid blue;
+    color: blue;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 12px;
+    transition: 0.3s ease-in-out;
+  }
+
+  .button:hover {
+    background-color: blue;
+    color: white;
+  }
+}
