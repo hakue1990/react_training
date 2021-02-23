@@ -12,6 +12,10 @@
     border-radius: 50%;
     margin-right: 30px;
   }
+  .imageNone {
+    @extend .image;
+    background-color: gray;
+  }
 
   .name {
     font-weight: 600;
@@ -23,7 +27,6 @@
     font-weight: 300;
     margin-bottom: 20px;
   }
-
 
   .button {
     padding: 10px;

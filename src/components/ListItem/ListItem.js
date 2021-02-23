@@ -3,9 +3,14 @@ import styles from "../ListItem/ListItem.module.scss";
 import PropTypes from "prop-types";
 
 const ListItem = ({ image, name, description, twitterLink }) => {
+  const ImageTag = image ? "img" : "div";
   return (
     <li className={styles.wrapper}>
-      <img src={image} alt={name} className={styles.image} />
+      <ImageTag
+        src={image}
+        alt={name}
+        className={image ? styles.image : styles.imageNone}
+      />
       <div>
         <h2 className={styles.name}>{name}</h2>
         <p className={styles.description}>{description}</p>
@@ -14,7 +19,6 @@ const ListItem = ({ image, name, description, twitterLink }) => {
         </a>
       </div>
     </li>
-
   );
 };
 
