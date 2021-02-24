@@ -1,10 +1,10 @@
 import React from "react";
 import ListItem from "../ListItem/ListItem";
-import "./ListWrapper.css";
+import styles from "./ListWrapper.module.scss";
 
 const ListWrapper = (props) => {
   return (
-    <ul className="ListWrapper__wrrapper">
+    <ul className={styles.wrapper}>
       {props.items.map((item) => (
         <ListItem key={item.name} {...item} />
       ))}
