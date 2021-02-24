@@ -1,4 +1,4 @@
-import "./App.css";
+import styles from "./App.module.scss";
 import React from "react";
 import ListWrapper from "../components/ListWrapper/ListWrapper";
 import Form from "./Form/Form";
@@ -54,7 +54,7 @@ class App extends React.Component {
   };
   render() {
     return (
-      <div className="App__wrapper">
+      <div className={styles.wrapper}>
         <ListWrapper items={this.state.items} />
         <Form submitFn={this.addItem} />
       </div>
