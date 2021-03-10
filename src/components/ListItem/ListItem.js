@@ -24,12 +24,12 @@ const ListItem = ({ image, name, description, twitterLink }) => {
 
 export default ListItem;
 
-ListItem.propTypes = {
-  image: PropTypes.string.isRequired,
+ListItem.prototypes = {
+  item: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
+  description: PropTypes.number.isRequired,
   twitterLink: PropTypes.string.isRequired,
 };
 ListItem.defaultProps = {
-  description: "one of React creators",
+  description: "demo guy",
 };

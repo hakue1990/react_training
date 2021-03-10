@@ -8,7 +8,7 @@ const initialItems = [
     image:
       "https://avatars.githubusercontent.com/u/810438?s=460&u=36b11d1db9c2380295b4371a98de87ab6b4c898f&v=4",
     name: "Dan Abramov",
-    description: "Working on react.js - demo guy",
+    // description: "Working on react.js - demo guy",
     twitterLink: "https://twitter.com/dan_abramov",
   },
   {
