@@ -1,7 +1,7 @@
-import styles from "./App.module.scss";
+import styles from "./Root.module.scss";
 import React from "react";
-import ListWrapper from "../components/ListWrapper/ListWrapper";
-import Form from "./Form/Form";
+import ListWrapper from '../../components/ListWrapper/ListWrapper';
+import Form from "../../components/Form/Form";
 
 const initialItems = [
   {
@@ -35,7 +35,7 @@ const initialItems = [
   },
 ];
 
-class App extends React.Component {
+class Root extends React.Component {
   state = {
     items: [...initialItems],
   };
@@ -62,4 +62,4 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default Root;
