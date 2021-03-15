@@ -1,0 +1,23 @@
+.wrapper {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    .navigationItem {
+        list-style-type: none;
+        margin-right: 2rem;
+
+        &Link {
+            text-decoration: none;
+            color: gray;
+
+            &Active {
+                font-weight: 700;
+                color: black;
+            }
+        }
+
+
+    }
+
+}

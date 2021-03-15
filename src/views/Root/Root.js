@@ -1,8 +1,9 @@
 import React from "react";
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import ArticlesView from "../ArticlesView/ArticlesView";
 import NotesView from "../NotesView/NotesView";
 import TwittersView from "../TwittersView/TwittersView";
+import Header from '../../components/Header/Header';
 
 const initialItems = [
   {
@@ -57,10 +58,12 @@ class Root extends React.Component {
     return (
       <BrowserRouter>
         <>
-          <h2>Hellow World</h2>
-          <Route exact path="/" component={TwittersView} />
-          <Route path="/articles" component={ArticlesView} />
-          <Route path="/notes" component={NotesView} />
+          <Header />
+          <Switch>
+            <Route exact path="/" component={TwittersView} />
+            <Route path="/articles" component={ArticlesView} />
+            <Route path="/notes" component={NotesView} />
+          </Switch>
         </>
       </BrowserRouter>
     );

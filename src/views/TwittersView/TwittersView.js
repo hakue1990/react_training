@@ -2,7 +2,7 @@ import React from 'react';
 
 const TwittersView = () => {
     return (
-        <p>this is a TwitterView</p>
+        <p>this is a twitter view</p>
     );
 }
 
