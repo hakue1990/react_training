@@ -1,13 +1,15 @@
 import styles from './Header.module.scss';
 import React from 'react';
 import HeaderNavigation from './HeaderNavigation';
+import Button from '../Button/Button'
 
 const Header = () => {
     return (
-        <div className={styles.header}>
+        <header className={styles.header}>
             <div className={styles.logo}>LH.pl</div>
             <HeaderNavigation />
-        </div>
+            <Button children='add new item' />
+        </header>
     );
 }
 

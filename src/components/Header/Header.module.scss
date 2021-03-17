@@ -1,12 +1,17 @@
 .header {
     display: flex;
-    justify-content: space-between;
-    background-color: #fff;
+    justify-content: space-around;
     padding: 5px;
+    align-items: center;
+    background-color: #fff;
+    height: 7vh;
+
+
 
     .logo {
-        font-weight: bold;
-        font-size: 20px;
+        font-weight: 700;
+        font-size: 22px;
         color: #192BC2;
+        letter-spacing: 13px;
     }
 }

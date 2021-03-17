@@ -2,7 +2,7 @@ import React from 'react';
 
 const ArticlesView = () => {
     return (
-        <p>this is an article view</p>
+        <h1>this is an article view</h1>
     );
 }
 
