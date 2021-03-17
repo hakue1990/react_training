@@ -1,6 +1,5 @@
 import React from "react";
 import styles from "./Form.module.scss";
-import Button from '../Button/Button';
 
 const Form = (props) => {
   return (
@@ -19,7 +18,7 @@ const Form = (props) => {
           description="description"
           className={styles.textarea}
         />
-        <Button>add new item</Button>
+
       </form>
     </>
   );

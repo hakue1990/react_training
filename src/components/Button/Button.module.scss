@@ -8,3 +8,7 @@ button {
     text-transform: uppercase;
     color: blue;
 }
+
+button:hover {
+    cursor: pointer;
+}

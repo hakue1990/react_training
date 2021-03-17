@@ -1,10 +1,11 @@
 import React from 'react';
 import styles from './Modal.module.scss';
+import Form from '../Form/Form';
 
 const Modal = () => {
     return (
-        <div className="wrapper">
-            <h1>siema modal</h1>
+        <div className={styles.wrapper}>
+            <Form />
         </div>
     );
 }
