@@ -1,14 +1,16 @@
-import styles from './Header.module.scss';
-import React from 'react';
-import HeaderNavigation from './HeaderNavigation';
-import Button from '../Button/Button';
+import styles from "./Header.module.scss";
+import React from "react";
+import HeaderNavigation from "./HeaderNavigation";
+import Button from "../Button/Button";
 
-const Header = () => {
+const Header = ({ openModalFn }) => {
   return (
     <header className={styles.header}>
       <div className={styles.logo}>TableBook</div>
       <HeaderNavigation />
-      <Button children='add new item' />
+      <Button children="add new item" onClick={openModalFn}>
+        MODAL
+      </Button>
     </header>
   );
 };

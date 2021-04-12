@@ -1,10 +1,10 @@
 import React from "react";
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import ArticlesView from "../ArticlesView/ArticlesView";
 import NotesView from "../NotesView/NotesView";
 import TwittersView from "../TwittersView/TwittersView";
-import Header from '../../components/Header/Header';
-import Modal from '../../components/Modal/Modal';
+import Header from "../../components/Header/Header";
+import Modal from "../../components/Modal/Modal";
 
 const initialItems = [
   {
@@ -41,6 +41,7 @@ const initialItems = [
 class Root extends React.Component {
   state = {
     items: [...initialItems],
+    isModalOpen: true,
   };
   addItem = (e) => {
     e.preventDefault();
@@ -55,17 +56,24 @@ class Root extends React.Component {
     }));
     e.target.reset();
   };
+
+  openModal = () => {
+    this.setState((prevState) => ({
+      isModalOpen: !prevState.isModalOpen,
+    }));
+  };
+
   render() {
     return (
       <BrowserRouter>
         <>
-          <Header />
+          <Header openModalFn={this.openModal} />
           <Switch>
             <Route exact path="/" component={TwittersView} />
             <Route path="/articles" component={ArticlesView} />
             <Route path="/notes" component={NotesView} />
           </Switch>
-          <Modal />
+          {this.state.isModalOpen && <Modal openModalFn={this.openModal} />}
         </>
       </BrowserRouter>
     );
