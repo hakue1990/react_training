@@ -1,9 +1,10 @@
-import React from "react";
-import styles from "../ListItem/ListItem.module.scss";
-import PropTypes from "prop-types";
+import React from 'react';
+import styles from '../ListItem/ListItem.module.scss';
+import PropTypes from 'prop-types';
+import Button from '../Button/Button';
 
 const ListItem = ({ image, name, description, twitterLink }) => {
-  const ImageTag = image ? "img" : "div";
+  const ImageTag = image ? 'img' : 'div';
   return (
     <li className={styles.wrapper}>
       <ImageTag
@@ -14,9 +15,7 @@ const ListItem = ({ image, name, description, twitterLink }) => {
       <div>
         <h2 className={styles.name}>{name}</h2>
         <p className={styles.description}>{description}</p>
-        <a href={twitterLink} target="blank" className={styles.button}>
-          visit twitter page
-        </a>
+        <Button href={twitterLink}>visit twitter page</Button>
       </div>
     </li>
   );
@@ -31,5 +30,5 @@ ListItem.prototypes = {
   twitterLink: PropTypes.string.isRequired,
 };
 ListItem.defaultProps = {
-  description: "demo guy",
+  description: 'demo guy',
 };

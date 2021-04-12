@@ -1,10 +1,16 @@
 import React from 'react';
 import styles from './Button.module.scss';
 
-const Button = ({ children }) => {
-    return (
-        <button type="submit" className={styles.button}>{children}</button>
-    );
-}
+const Button = ({ href, children }) => (
+  <React.Fragment>
+    {href ? (
+      <a href={href} target='blank' className={styles.button}>
+        {children}
+      </a>
+    ) : (
+      <button className={styles.button}>{children}</button>
+    )}
+  </React.Fragment>
+);
 
 export default Button;
