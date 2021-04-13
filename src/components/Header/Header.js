@@ -9,7 +9,7 @@ const Header = ({ openModalFn }) => {
       <div className={styles.logo}>TableBook</div>
       <HeaderNavigation />
       <Button children="add new item" onClick={openModalFn}>
-        MODAL
+        Add new item
       </Button>
     </header>
   );
