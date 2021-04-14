@@ -11,3 +11,9 @@
 button:hover {
   cursor: pointer;
 }
+
+.secondary {
+  @extend .button;
+  background-color: #1e58ff;
+  color: white;
+}

@@ -8,7 +8,7 @@ const Header = ({ openModalFn }) => {
     <header className={styles.header}>
       <div className={styles.logo}>TableBook</div>
       <HeaderNavigation />
-      <Button children="add new item" onClick={openModalFn}>
+      <Button secondary children="add new item" onClick={openModalFn}>
         Add new item
       </Button>
     </header>

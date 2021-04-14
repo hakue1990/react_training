@@ -1,7 +1,12 @@
-import React from 'react';
+import React from "react";
 
 const ArticlesView = () => {
-  return <h1>this is an article view</h1>;
+  return (
+    <React.Fragment>
+      <h1>Hello World</h1>
+      <h1>this is an article view</h1>;
+    </React.Fragment>
+  );
 };
 
 export default ArticlesView;
