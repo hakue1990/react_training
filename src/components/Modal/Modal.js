@@ -3,10 +3,10 @@ import styles from "./Modal.module.scss";
 import Form from "../Form/Form";
 import ModalButton from "../ModalButton/ModalButton";
 
-const Modal = ({ openModalFn }) => {
+const Modal = ({ openModalFn, closeModalFn }) => {
   return (
     <div className={styles.wrapper}>
-      <ModalButton />
+      <ModalButton onClick={closeModalFn} />
       <Form />
     </div>
   );

@@ -1,10 +1,10 @@
 import React from "react";
 import styles from "./ModalButton.module.scss";
 
-const ModalButton = () => {
+const ModalButton = ({ ...props }) => {
   return (
     <React.Fragment>
-      <button className={styles.hamburger}>
+      <button {...props} className={styles.hamburger}>
         <span className={styles.hamburger__box}>
           <span className={styles.hamburger__inner}></span>
         </span>

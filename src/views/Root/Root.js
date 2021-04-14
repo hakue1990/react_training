@@ -62,7 +62,11 @@ class Root extends React.Component {
       isModalOpen: !prevState.isModalOpen,
     }));
   };
-
+  closeModal = () => {
+    this.setState((prevState) => ({
+      isModalOpen: false,
+    }));
+  };
   render() {
     return (
       <BrowserRouter>
@@ -73,7 +77,12 @@ class Root extends React.Component {
             <Route path="/articles" component={ArticlesView} />
             <Route path="/notes" component={NotesView} />
           </Switch>
-          {this.state.isModalOpen && <Modal openModalFn={this.openModal} />}
+          {this.state.isModalOpen && (
+            <Modal
+              closeModalFn={this.closeModal}
+              openModalFn={this.openModal}
+            />
+          )}
         </>
       </BrowserRouter>
     );
