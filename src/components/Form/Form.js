@@ -4,8 +4,16 @@ import Input from "../Input/Input";
 import Button from "../Button/Button";
 import Title from "../Title/Title";
 
+const types = {
+  twitter: "twitter",
+  articles: "articles",
+  notes: "notes",
+};
+
 class Form extends React.Component {
-  state = {};
+  state = {
+    activeOption: types.twitter,
+  };
   render() {
     return (
       <div className={styles.wrapper}>
