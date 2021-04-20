@@ -5,7 +5,12 @@
   flex-direction: column;
   align-items: center;
 }
-
+.radio__wrapper {
+  width: 250px;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+}
 .form {
   width: 100%;
   max-width: 350px;
