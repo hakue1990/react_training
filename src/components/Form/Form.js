@@ -11,6 +11,12 @@ const types = {
   notes: "notes",
 };
 
+const descriptions = {
+  twitter: "twitter account",
+  articles: "article",
+  notes: "note",
+};
+
 class Form extends React.Component {
   state = {
     activeOption: types.twitter,
@@ -23,9 +29,11 @@ class Form extends React.Component {
   };
 
   render() {
+    const { activeOption } = this.state;
+
     return (
       <div className={styles.wrapper}>
-        <Title>add new twitter asdgitaccount</Title>
+        <Title>add new {descriptions[activeOption]}</Title>
         <form
           autoComplete="off"
           className={styles.form}
@@ -56,8 +64,17 @@ class Form extends React.Component {
           </div>
 
           <Input name="Name" label="Name" maxLength={30} />
-          <Input name="twitterLink" label="Twitter Link" maxLength={30} />
-          <Input name="image" label="Image" maxLength={30} />
+          {activeOption === types.notes ? null : (
+            <Input
+              name="twitterLink"
+              label={activeOption === types.twitter ? "Twitter Link" : "Link"}
+              maxLength={30}
+            />
+          )}
+
+          {activeOption === types.twitter ? (
+            <Input name="image" label="Image" maxLength={30} />
+          ) : null}
           <Input
             tag="textarea"
             name="description"
