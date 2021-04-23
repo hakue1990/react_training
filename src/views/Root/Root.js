@@ -71,7 +71,7 @@ class Root extends React.Component {
   render() {
     return (
       <BrowserRouter>
-        <AppContext.Provider>
+        <AppContext.Provider value="Adam siemanko morda ty mordo ty moja xoxoxo :D">
           <Header openModalFn={this.openModal} />
           <Switch>
             <Route exact path="/" component={TwittersView} />

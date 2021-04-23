@@ -4,12 +4,7 @@ import AppContext from "../../context";
 const ArticlesView = () => {
   return (
     <AppContext.Consumer>
-      {(context) => (
-        <React.Fragment>
-          <h1>Hello World {context}</h1>
-          <h1>this is an article view</h1>
-        </React.Fragment>
-      )}
+      {(context) => <p>siema {context}</p>}
     </AppContext.Consumer>
   );
 };
