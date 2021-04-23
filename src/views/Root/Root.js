@@ -5,6 +5,7 @@ import NotesView from "../NotesView/NotesView";
 import TwittersView from "../TwittersView/TwittersView";
 import Header from "../../components/Header/Header";
 import Modal from "../../components/Modal/Modal";
+import AppContext from "../../context";
 
 const initialItems = [
   {
@@ -70,7 +71,7 @@ class Root extends React.Component {
   render() {
     return (
       <BrowserRouter>
-        <>
+        <AppContext.Provider>
           <Header openModalFn={this.openModal} />
           <Switch>
             <Route exact path="/" component={TwittersView} />
@@ -83,7 +84,7 @@ class Root extends React.Component {
               openModalFn={this.openModal}
             />
           )}
-        </>
+        </AppContext.Provider>
       </BrowserRouter>
     );
   }
