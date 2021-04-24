@@ -49,11 +49,7 @@ class Root extends React.Component {
     };
     return (
       <BrowserRouter>
-<<<<<<< HEAD
         <AppContext.Provider value={contextElements}>
-=======
-        <AppContext.Provider value="Adam siemanko morda ty mordo ty moja xoxoxo :D">
->>>>>>> 357858ef94bbe05df6a07c104742489208d49243
           <Header openModalFn={this.openModal} />
           <Switch>
             <Route exact path="/" component={TwittersView} />

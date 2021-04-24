@@ -1,18 +1,19 @@
-import React from 'react';
-import styles from './Input.module.scss';
-import PropTypes from 'prop-types';
+import React from "react";
+import styles from "./Input.module.scss";
+import PropTypes from "prop-types";
 
-const Input = ({ tag: Tag, name, label, maxLength }) => {
+const Input = ({ tag: Tag, name, label, maxLength, ...props }) => {
   return (
     <div className={styles.formItem}>
       <Tag
         className={styles.input}
-        type='text'
+        type="text"
         name={name}
         id={name}
-        placeholder=' '
+        placeholder=" "
         required
         maxLength={maxLength}
+        {...props}
       />
       <label className={styles.label} htmlFor={name}>
         {label}
@@ -29,7 +30,7 @@ Input.propTypes = {
   maxLength: PropTypes.number.isRequired,
 };
 Input.defaultProps = {
-  tag: 'input',
+  tag: "input",
   maxLength: 200,
 };
 

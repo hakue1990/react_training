@@ -21,6 +21,10 @@ const descriptions = {
 class Form extends React.Component {
   state = {
     activeOption: types.twitter,
+    title: "",
+    link: "",
+    image: "",
+    description: "",
   };
 
   handleRadioInputChange = (type) => {
@@ -28,7 +32,11 @@ class Form extends React.Component {
       activeOption: type,
     });
   };
-
+  handleInputChange = (e) => {
+    this.setState({
+      [e.target.name]: e.target.value,
+    });
+  };
   render() {
     const { activeOption } = this.state;
 
@@ -66,7 +74,13 @@ class Form extends React.Component {
                 </Radio>
               </div>
 
-              <Input name="Name" label="Name" maxLength={30} />
+              <Input
+                name="title"
+                label="Name"
+                maxLength={30}
+                onChange={this.handleInputChange}
+                value={this.state.title}
+              />
               {activeOption === types.notes ? null : (
                 <Input
                   name="twitterLink"
@@ -74,17 +88,27 @@ class Form extends React.Component {
                     activeOption === types.twitter ? "Twitter Link" : "Link"
                   }
                   maxLength={30}
+                  onChange={this.handleInputChange}
+                  value={this.state.link}
                 />
               )}
 
               {activeOption === types.twitter ? (
-                <Input name="image" label="Image" maxLength={30} />
+                <Input
+                  name="image"
+                  label="Image"
+                  maxLength={30}
+                  onChange={this.handleInputChange}
+                  value={this.state.image}
+                />
               ) : null}
               <Input
                 tag="textarea"
                 name="description"
                 label="Description"
                 maxLength={200}
+                onChange={this.handleInputChange}
+                value={this.state.descriptions}
               />
               <Button>add new item</Button>
             </form>

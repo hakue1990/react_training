@@ -1,12 +1,7 @@
 import React from "react";
-import AppContext from "../../context";
 
 const ArticlesView = () => {
-  return (
-    <AppContext.Consumer>
-      {(context) => <p>siema {context}</p>}
-    </AppContext.Consumer>
-  );
+  return <p>siema </p>;
 };
 
 export default ArticlesView;
