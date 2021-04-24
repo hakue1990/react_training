@@ -7,55 +7,29 @@ import Header from "../../components/Header/Header";
 import Modal from "../../components/Modal/Modal";
 import AppContext from "../../context";
 
-const initialItems = [
-  {
-    image:
-      "https://avatars.githubusercontent.com/u/810438?s=460&u=36b11d1db9c2380295b4371a98de87ab6b4c898f&v=4",
-    name: "Dan Abramov",
-    // description: "Working on react.js - demo guy",
-    twitterLink: "https://twitter.com/dan_abramov",
-  },
-  {
-    image:
-      "https://pbs.twimg.com/profile_images/1344410501309030403/L2rNpO6h.jpg",
-    name: "Ryan Florence",
-    description:
-      "Making React assccesible for users and developers : Online learning, workshops, OSS, and consulting ",
-    twitterLink: "https://twitter.com/ryanflorence",
-  },
-  {
-    image:
-      "https://avatars.githubusercontent.com/u/92839?s=400&u=2727b5ab382f6b2f3be84a257c2dcdc50243d78f&v=4",
-    name: "Michael Jackson",
-    description: "Maker - CO author of React Router  ",
-    twitterLink: "https://twitter.com/mjackson",
-  },
-  {
-    image:
-      "https://pbs.twimg.com/profile_images/759557613445001216/6M2E1l4q_400x400.jpg",
-    name: "Kent C. Dodds",
-    description: "Making software development more accessible ",
-    twitterLink: "https://twitter.com/kentcdodds",
-  },
-];
-
 class Root extends React.Component {
   state = {
-    items: [...initialItems],
+    items: {
+      twitters: [],
+      articles: [],
+      notes: [],
+    },
     isModalOpen: true,
   };
   addItem = (e) => {
     e.preventDefault();
-    const newItem = {
-      name: e.target[0].value,
-      link: e.target[1].value,
-      image: e.target[2].value,
-      description: e.target[3].value,
-    };
-    this.setState((prevState) => ({
-      items: [...prevState.items, newItem],
-    }));
-    e.target.reset();
+
+    console.log("it works!");
+    // const newItem = {
+    //   name: e.target[0].value,
+    //   link: e.target[1].value,
+    //   image: e.target[2].value,
+    //   description: e.target[3].value,
+    // };
+    // this.setState((prevState) => ({
+    //   items: [...prevState.items, newItem],
+    // }));
+    // e.target.reset();
   };
 
   openModal = () => {
@@ -69,9 +43,13 @@ class Root extends React.Component {
     }));
   };
   render() {
+    const contextElements = {
+      ...this.state,
+      addItem: this.addItem,
+    };
     return (
       <BrowserRouter>
-        <AppContext.Provider>
+        <AppContext.Provider value={contextElements}>
           <Header openModalFn={this.openModal} />
           <Switch>
             <Route exact path="/" component={TwittersView} />
