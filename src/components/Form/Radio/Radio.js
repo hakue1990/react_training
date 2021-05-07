@@ -6,6 +6,7 @@ const Radio = ({ id, checked, changeFn, children }) => {
     <label className={styles.radio}>
       <input id={id} type="radio" onChange={changeFn} checked={checked} />
       {children}
+      <div className={styles.radioDiv}></div>
     </label>
   );
 };
