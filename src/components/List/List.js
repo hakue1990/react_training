@@ -2,17 +2,19 @@ import React from "react";
 import ListItem from "./ListItem";
 import styles from "./List.module.scss";
 
-const List = ({items}) => (
+const List = ({ items }) => (
   <>
-  {items.length ? (
+    {items.length ? (
       <ul className={styles.wrapper}>
-        {items.map(item => (
+        {items.map((item) => (
           <ListItem key={item.title} {...item} />
         ))}
-      </ul>  
-  ) : (
-    <h1 class={styles.noItems}>There's nothing here yet, please add some items! ❤️</h1>
-  )}
+      </ul>
+    ) : (
+      <h1 class={styles.noItems}>
+        Jeszcze nic nie dodałeś, dodaj coś nowego ❤️
+      </h1>
+    )}
   </>
 );
 

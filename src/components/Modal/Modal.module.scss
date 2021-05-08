@@ -4,9 +4,9 @@
   left: 0;
   right: 0;
   margin: 0 auto;
-  width: 600px;
+  width: 60vw;
   background-color: white;
-  box-shadow: 0 20px 40px -15px rgba(black, 0.3);
+  box-shadow: 0 20px 40px -5px rgba(#1e58ff, .3);
   position: fixed;
 }
 
@@ -14,14 +14,14 @@
   width: 27px;
   height: 27px;
   background: #1e58ff;
-  border: none;
+  border: none; 
   position: absolute;
   right: 30px;
   top: 30px;
-
-  &::before,
+  
+  &::before, 
   &::after {
-    content: "";
+    content: '';
     width: 16px;
     height: 2px;
     position: absolute;
@@ -35,11 +35,11 @@
     margin: 0 auto;
     transform-origin: 50%;
   }
-
+  
   &::before {
     transform: rotate(45deg);
   }
-
+  
   &::after {
     transform: rotate(-45deg);
   }
