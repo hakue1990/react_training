@@ -1,52 +1,50 @@
 import React from "react";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
-import ArticlesView from "../ArticlesView/ArticlesView";
-import NotesView from "../NotesView/NotesView";
-import TwittersView from "../TwittersView/TwittersView";
-import Header from "../../components/Header/Header";
-import Modal from "../../components/Modal/Modal";
-import AppContext from "../../context";
+import "./index.css";
+import AppContext from '../../context';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import TwittersView from '../TwittersView/TwittersView';
+import ArticlesView from '../ArticlesView/ArticlesView';
+import NotesView from '../NotesView/NotesView';
+import Header from '../../components/Header/Header';
+import Modal from '../../components/Modal/Modal';
 
 class Root extends React.Component {
   state = {
-    items: {
-      twitters: [],
-      articles: [],
-      notes: [],
-    },
-    isModalOpen: true,
+    twitter: [],
+    article: [],
+    note: [],
+    isModalOpen: false,
   };
-  addItem = (e) => {
+
+  addItem = (e, newItem) => {
     e.preventDefault();
-
-    console.log("it works!");
-    // const newItem = {
-    //   name: e.target[0].value,
-    //   link: e.target[1].value,
-    //   image: e.target[2].value,
-    //   description: e.target[3].value,
-    // };
-    // this.setState((prevState) => ({
-    //   items: [...prevState.items, newItem],
-    // }));
-    // e.target.reset();
+    
+    this.setState(prevState => ({
+      [newItem.type]: [...prevState[newItem.type], newItem],
+    }));
+    
+    this.closeModal();
   };
-
+  
   openModal = () => {
-    this.setState((prevState) => ({
-      isModalOpen: !prevState.isModalOpen,
-    }));
-  };
+    this.setState({
+      isModalOpen: true,
+    })
+  }
+  
   closeModal = () => {
-    this.setState((prevState) => ({
+    this.setState({
       isModalOpen: false,
-    }));
-  };
+    })
+  }
+
   render() {
+    const { isModalOpen } = this.state;
     const contextElements = {
       ...this.state,
-      addItem: this.addItem,
-    };
+      addItem: this.addItem
+    }
+    
     return (
       <BrowserRouter>
         <AppContext.Provider value={contextElements}>
@@ -56,12 +54,7 @@ class Root extends React.Component {
             <Route path="/articles" component={ArticlesView} />
             <Route path="/notes" component={NotesView} />
           </Switch>
-          {this.state.isModalOpen && (
-            <Modal
-              closeModalFn={this.closeModal}
-              openModalFn={this.openModal}
-            />
-          )}
+          { isModalOpen && <Modal closeModalFn={this.closeModal} /> }
         </AppContext.Provider>
       </BrowserRouter>
     );
@@ -69,3 +62,7 @@ class Root extends React.Component {
 }
 
 export default Root;
+
+// 3. Dopasować Form.js do nowych potrzeb
+// 4. Przystosować widoki podstron do nowych itemów
+// 5. Wyświetlać odpowiednie notatki na podstronach 

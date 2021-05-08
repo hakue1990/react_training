@@ -1,18 +1,15 @@
-import styles from "./Header.module.scss";
-import React from "react";
-import HeaderNavigation from "./HeaderNavigation";
-import Button from "../Button/Button";
+import React from 'react';
+import Button from '../Button/Button';
+import HeaderNavigation from './HeaderNavigation';
+import styles from './Header.module.scss';
+import logoImage from '../../assets/images/logo.svg';
 
-const Header = ({ openModalFn }) => {
-  return (
-    <header className={styles.header}>
-      <div className={styles.logo}>TableBook</div>
-      <HeaderNavigation />
-      <Button secondary children="add new item" onClick={openModalFn}>
-        Add new item
-      </Button>
-    </header>
-  );
-};
+const Header = ({ openModalFn }) => (
+  <header className={styles.wrapper}>
+    <img className={styles.logo} src={logoImage} alt="FavNote logo" />
+    <HeaderNavigation />
+    <Button onClick={openModalFn} secondary>new item</Button>
+  </header>
+);
 
 export default Header;

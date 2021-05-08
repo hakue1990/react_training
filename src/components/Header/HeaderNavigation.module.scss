@@ -1,23 +1,20 @@
 .wrapper {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-
-    .navigationItem {
-        list-style-type: none;
-        margin-right: 4rem;
-
-        &Link {
-            text-decoration: none;
-            color: gray;
-
-            &Active {
-                font-weight: 700;
-                color: #192BC2;
-            }
-        }
-
-
-    }
-
+  margin-left: 80px;
+  padding: 0;
 }
+
+.navItem {
+    display: inline-block;
+    margin-right: 50px;
+    list-style: none;
+    
+    &Link {
+      text-decoration: none;
+      color: #818181;
+      font-size: .8em;
+      
+      &Active {
+        font-weight: 700;
+      }
+    }
+  }

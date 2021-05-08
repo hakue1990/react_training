@@ -1,114 +1,114 @@
 import React from "react";
+import AppContext from "../../context";
 import styles from "./Form.module.scss";
 import Input from "../Input/Input";
 import Button from "../Button/Button";
 import Title from "../Title/Title";
-import Radio from "./Radio/Radio";
-import AppContext from "../../context";
+import Radio from "./FormRadio";
 
 const types = {
   twitter: "twitter",
-  articles: "articles",
-  notes: "notes",
+  article: "article",
+  note: "note",
 };
 
 const descriptions = {
-  twitter: "twitter account",
-  articles: "article",
-  notes: "note",
+  twitter: "favorite Twitter account",
+  article: "Article",
+  note: "Note",
 };
 
 class Form extends React.Component {
   state = {
-    activeOption: types.twitter,
+    type: types.twitter,
     title: "",
     link: "",
     image: "",
     description: "",
   };
 
-  handleRadioInputChange = (type) => {
+  handleRadioButtonChange = type => {
     this.setState({
-      activeOption: type,
+      type: type,
     });
   };
-  handleInputChange = (e) => {
+  
+  handleInputChange = e => {
     this.setState({
       [e.target.name]: e.target.value,
     });
+    
   };
+
   render() {
-    const { activeOption } = this.state;
+    const { type } = this.state;
 
     return (
       <AppContext.Consumer>
-        {(context) => (
+        {context => (
           <div className={styles.wrapper}>
-            <Title>add new {descriptions[activeOption]}</Title>
+            <Title>Add new {descriptions[type]}</Title>
             <form
               autoComplete="off"
               className={styles.form}
-              onSubmit={context.addItem}
+              onSubmit={(e) => context.addItem(e, this.state)}
             >
-              <div className={styles.radio__wrapper}>
+              <div className={styles.formOptions}>
                 <Radio
                   id={types.twitter}
-                  checked={this.state.activeOption === types.twitter}
-                  changeFn={() => this.handleRadioInputChange(types.twitter)}
+                  checked={type === types.twitter}
+                  changeFn={() => this.handleRadioButtonChange(types.twitter)}
                 >
                   Twitter
                 </Radio>
                 <Radio
-                  id={types.articles}
-                  checked={this.state.activeOption === types.articles}
-                  changeFn={() => this.handleRadioInputChange(types.articles)}
+                  id={types.article}
+                  checked={type === types.article}
+                  changeFn={() => this.handleRadioButtonChange(types.article)}
                 >
-                  Articles
+                  Article
                 </Radio>
                 <Radio
-                  id={types.notes}
-                  checked={this.state.activeOption === types.notes}
-                  changeFn={() => this.handleRadioInputChange(types.notes)}
+                  id={types.note}
+                  checked={type === types.note}
+                  changeFn={() => this.handleRadioButtonChange(types.note)}
                 >
-                  Notes
+                  Note
                 </Radio>
               </div>
-
               <Input
-                name="title"
-                label="Name"
-                maxLength={30}
                 onChange={this.handleInputChange}
                 value={this.state.title}
+                name="title"
+                label={
+                  type === types.twitter ? "Twitter Name" : "Title"
+                }
               />
-              {activeOption === types.notes ? null : (
+              {type !== types.note ? (
                 <Input
-                  name="twitterLink"
-                  label={
-                    activeOption === types.twitter ? "Twitter Link" : "Link"
-                  }
-                  maxLength={30}
                   onChange={this.handleInputChange}
                   value={this.state.link}
+                  name="link"
+                  label={
+                    type === types.twitter ? "Twitter Link" : "Link"
+                  }
                 />
-              )}
+              ) : null}
 
-              {activeOption === types.twitter ? (
+              {type === types.twitter ? (
                 <Input
-                  name="image"
-                  label="Image"
-                  maxLength={30}
                   onChange={this.handleInputChange}
                   value={this.state.image}
+                  name="image"
+                  label="Image"
                 />
               ) : null}
               <Input
+                onChange={this.handleInputChange}
+                value={this.state.description}
                 tag="textarea"
                 name="description"
                 label="Description"
-                maxLength={200}
-                onChange={this.handleInputChange}
-                value={this.state.descriptions}
               />
               <Button>add new item</Button>
             </form>

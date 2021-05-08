@@ -1,16 +1,11 @@
 .wrapper {
-  width: 50%;
-  margin: 50px auto 100px;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
 }
-.radio__wrapper {
-  width: 250px;
-  display: flex;
-  justify-content: space-around;
-  margin-top: 10px;
-}
+
+
 .form {
   width: 100%;
   max-width: 350px;
@@ -18,40 +13,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-}
-
-.formItem {
-  width: 100%;
-  margin: 24px 0;
-  position: relative;
-  flex-shrink: 0;
-}
-
-.formItemBar {
-  width: 100%;
-  height: 2px;
-  background: #7d7d7d;
-  transition: 0.1s all;
-}
-
-.label {
-  color: #7d7d7d;
-  position: absolute;
-  top: 3px;
-  left: 0;
-  transition: 0.2s ease-out all;
-  font-size: 16px;
-}
-
-.button {
-  font-size: 10px;
-  text-decoration: none;
-  padding: 7px 12px;
-  font-weight: 500;
-  background: none;
-  border: 2px solid #1e58ff;
-  color: #1e58ff;
-}
-input[type="radio"] {
-  display: inline-flex;
+  
+  button {
+    margin-top: 50px;
+  }
 }

@@ -1,17 +1,10 @@
-.header {
-    display: flex;
-    justify-content: space-around;
-    padding: 5px;
-    align-items: center;
-    background-color: #fff;
-    height: 7vh;
+.wrapper {
+  display: grid;
+  grid-template-columns: 140px 1fr 120px;
+  align-items: center;
+  padding: 30px 40px;
+}
 
-
-
-    .logo {
-        font-weight: 700;
-        font-size: 22px;
-        color: #192BC2;
-        letter-spacing: 13px;
-    }
+.logo {
+  width: 100%;
 }

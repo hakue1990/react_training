@@ -1,21 +1,30 @@
-import React from "react";
-import styles from "./Button.module.scss";
+import React from 'react';
+import styles from './Button.module.scss';
 
-const Button = ({ href, children, openModalFn, secondary, ...props }) => (
-  <React.Fragment>
-    {href ? (
-      <a href={href} target="blank" className={styles.button}>
-        {children}
-      </a>
-    ) : (
-      <button
-        {...props}
-        className={secondary ? styles.secondary : styles.button}
-      >
-        {children}
-      </button>
-    )}
-  </React.Fragment>
-);
+const Button = ({ children, href, secondary, ...props }) => {
+  
+  const buttonClass = secondary ? styles.secondary : styles.button;
+  
+  return (
+    <>
+      {
+        href ? (
+          <a
+            href={href}
+            target="_blank"
+            className={buttonClass}
+            rel="noopener noreferrer"
+          >
+            {children}
+          </a>
+        ) : (
+            <button className={buttonClass} {...props}>
+              {children}
+            </button>
+          )
+      }
+    </>
+  )
+};
 
 export default Button;
