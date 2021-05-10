@@ -2,14 +2,13 @@
 
 body {
   font-family: "Montserrat", sans-serif;
+  height: 300vh;
 
   .wrapper {
     display: flex;
     justify-content: space-around;
   }
 }
-
-
 
 @keyframes drop {
   0% {

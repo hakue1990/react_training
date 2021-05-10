@@ -5,15 +5,15 @@
   right: 0;
   margin: 0 auto;
   width: 600px;
-  background-color: white;
-  box-shadow: 0 20px 40px -5px rgba(#1e58ff, 0.3);
+  background-color: #525174;
+  box-shadow: 0 20px 40px -5px rgba(#f0e110, 0.3);
   position: fixed;
 }
 
 .closeButton {
   width: 27px;
   height: 27px;
-  background: #1e58ff;
+  background: #f3a712;
   border: none;
   position: absolute;
   right: 30px;
@@ -25,7 +25,7 @@
     width: 16px;
     height: 2px;
     position: absolute;
-    background: white;
+    background: #525174;
     display: block;
     top: 50%;
     transform: translateY(-50%);

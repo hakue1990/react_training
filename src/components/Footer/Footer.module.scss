@@ -1,0 +1,18 @@
+.wrapper {
+  width: 100vw;
+  height: 80px;
+  background-color: pink;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  bottom: 0;
+  justify-content: right;
+  color: white;
+  background-color: #f3a712;
+
+  h3 {
+    position: absolute;
+    right: 5px;
+    margin-right: 10px;
+  }
+}

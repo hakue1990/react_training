@@ -6,6 +6,7 @@ import RezerwacjeView from "../RezerwacjeView/RezerwacjeView";
 import ZamowieniaView from "../ZamowieniaView/ZamowieniaView";
 import ZadaniaView from "../ZadaniaView/ZadaniaView";
 import PolitykaPrywatnosciView from "../PolitykaPrywatnosci/PolitykaPrywatnosciView";
+import Footer from "./../../components/Footer/Footer";
 
 import Header from "../../components/Header/Header";
 import Modal from "../../components/Modal/Modal";
@@ -62,6 +63,7 @@ class Root extends React.Component {
             />
           </Switch>
           {isModalOpen && <Modal closeModalFn={this.closeModal} />}
+          <Footer />
         </AppContext.Provider>
       </BrowserRouter>
     );

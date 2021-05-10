@@ -10,11 +10,12 @@
 
   &Link {
     text-decoration: none;
-    color: #818181;
     font-size: 0.8em;
+    color: white;
 
     &Active {
       font-weight: 700;
+      color: #f3a712;
     }
   }
 }
