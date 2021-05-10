@@ -5,6 +5,8 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import RezerwacjeView from "../RezerwacjeView/RezerwacjeView";
 import ZamowieniaView from "../ZamowieniaView/ZamowieniaView";
 import ZadaniaView from "../ZadaniaView/ZadaniaView";
+import PolitykaPrywatnosciView from "../PolitykaPrywatnosci/PolitykaPrywatnosciView";
+
 import Header from "../../components/Header/Header";
 import Modal from "../../components/Modal/Modal";
 
@@ -54,6 +56,10 @@ class Root extends React.Component {
             <Route path="/zamowienia" component={ZamowieniaView} />
 
             <Route path="/zadania" component={ZadaniaView} />
+            <Route
+              path="/politykaprywatnosci"
+              component={PolitykaPrywatnosciView}
+            />
           </Switch>
           {isModalOpen && <Modal closeModalFn={this.closeModal} />}
         </AppContext.Provider>

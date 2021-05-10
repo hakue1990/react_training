@@ -7,37 +7,36 @@ import Title from "../Title/Title";
 import Radio from "./FormRadio";
 
 const types = {
-  twitter: "twitter",
-  article: "article",
-  note: "note",
+  rezerwacje: "rezerwacje",
+  zamowienia: "zamowienia",
+  zadania: "zadania",
 };
 
 const descriptions = {
-  twitter: "favorite Twitter account",
-  article: "Article",
-  note: "Note",
+  rezerwacje: "zarezerwuj stolik",
+  zamowienia: "dodaj zamowienie",
+  zadania: "to do list",
 };
 
 class Form extends React.Component {
   state = {
-    type: types.twitter,
-    title: "",
-    link: "",
-    image: "",
-    description: "",
+    type: types.rezerwacje,
+    imie: "",
+    ileOsob: "",
+    data: "",
+    godzina: "",
   };
 
-  handleRadioButtonChange = type => {
+  handleRadioButtonChange = (type) => {
     this.setState({
       type: type,
     });
   };
-  
-  handleInputChange = e => {
+
+  handleInputChange = (e) => {
     this.setState({
       [e.target.name]: e.target.value,
     });
-    
   };
 
   render() {
@@ -45,9 +44,9 @@ class Form extends React.Component {
 
     return (
       <AppContext.Consumer>
-        {context => (
+        {(context) => (
           <div className={styles.wrapper}>
-            <Title>Add new {descriptions[type]}</Title>
+            <Title> {descriptions[type]}</Title>
             <form
               autoComplete="off"
               className={styles.form}
@@ -55,62 +54,62 @@ class Form extends React.Component {
             >
               <div className={styles.formOptions}>
                 <Radio
-                  id={types.twitter}
-                  checked={type === types.twitter}
-                  changeFn={() => this.handleRadioButtonChange(types.twitter)}
+                  id={types.rezerwacje}
+                  checked={type === types.rezerwacje}
+                  changeFn={() =>
+                    this.handleRadioButtonChange(types.rezerwacje)
+                  }
                 >
-                  Twitter
+                  rezerwacja
                 </Radio>
                 <Radio
-                  id={types.article}
-                  checked={type === types.article}
-                  changeFn={() => this.handleRadioButtonChange(types.article)}
+                  id={types.zamowienia}
+                  checked={type === types.zamowienia}
+                  changeFn={() =>
+                    this.handleRadioButtonChange(types.zamowienia)
+                  }
                 >
-                  Article
+                  zamówienie
                 </Radio>
                 <Radio
-                  id={types.note}
-                  checked={type === types.note}
-                  changeFn={() => this.handleRadioButtonChange(types.note)}
+                  id={types.zadania}
+                  checked={type === types.zadania}
+                  changeFn={() => this.handleRadioButtonChange(types.zadania)}
                 >
-                  Note
+                  zadanie
                 </Radio>
               </div>
               <Input
                 onChange={this.handleInputChange}
-                value={this.state.title}
-                name="title"
-                label={
-                  type === types.twitter ? "Twitter Name" : "Title"
-                }
+                value={this.state.imie}
+                name="imie"
+                label={type === types.rezerwacje ? "Imię i Nazwisko" : "Title"}
               />
-              {type !== types.note ? (
+              {type !== types.zadania ? (
                 <Input
                   onChange={this.handleInputChange}
-                  value={this.state.link}
-                  name="link"
-                  label={
-                    type === types.twitter ? "Twitter Link" : "Link"
-                  }
+                  value={this.state.ileOsob}
+                  name="ileOsob"
+                  label={type === types.rezerwacje ? "ile osób" : "Link"}
                 />
               ) : null}
 
-              {type === types.twitter ? (
+              {type === types.rezerwacje ? (
                 <Input
                   onChange={this.handleInputChange}
-                  value={this.state.image}
-                  name="image"
-                  label="Image"
+                  value={this.state.data}
+                  name="data"
+                  label="data"
                 />
               ) : null}
               <Input
                 onChange={this.handleInputChange}
-                value={this.state.description}
+                value={this.state.godzina}
                 tag="textarea"
-                name="description"
-                label="Description"
+                name="godzina"
+                label="godzina"
               />
-              <Button>add new item</Button>
+              <Button>Dodaj</Button>
             </form>
           </div>
         )}
