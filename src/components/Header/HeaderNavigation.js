@@ -19,7 +19,7 @@ const HeaderNavigation = () => (
         <NavLink
           activeClassName={styles.navItemLinkActive}
           className={styles.navItemLink}
-          to="/articles"
+          to="/zamowienia"
         >
           zamówienia
         </NavLink>
@@ -28,9 +28,27 @@ const HeaderNavigation = () => (
         <NavLink
           activeClassName={styles.navItemLinkActive}
           className={styles.navItemLink}
-          to="/notes"
+          to="/zadania"
         >
           zadania
+        </NavLink>
+      </li>
+      <li className={styles.navItem}>
+        <NavLink
+          activeClassName={styles.navItemLinkActive}
+          className={styles.navItemLink}
+          to="/zglosblad"
+        >
+          zgłoś błąd
+        </NavLink>
+      </li>
+      <li className={styles.navItem}>
+        <NavLink
+          activeClassName={styles.navItemLinkActive}
+          className={styles.navItemLink}
+          to="/politykaprywatnosci"
+        >
+          polityka prywatności
         </NavLink>
       </li>
     </ul>
