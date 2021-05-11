@@ -5,6 +5,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import RezerwacjeView from "../RezerwacjeView/RezerwacjeView";
 import ZamowieniaView from "../ZamowieniaView/ZamowieniaView";
 import ZadaniaView from "../ZadaniaView/ZadaniaView";
+import ZglosBladView from "../ZglosBladView/ZglosBladView";
 import PolitykaPrywatnosciView from "../PolitykaPrywatnosci/PolitykaPrywatnosciView";
 import Footer from "./../../components/Footer/Footer";
 
@@ -29,16 +30,10 @@ class Root extends React.Component {
     this.closeModal();
   };
 
-  openModal = () => {
-    this.setState({
-      isModalOpen: true,
-    });
-  };
-
   closeModal = () => {
-    this.setState({
-      isModalOpen: false,
-    });
+    this.setState((prevState) => ({
+      isModalOpen: !prevState.isModalOpen,
+    }));
   };
 
   render() {
@@ -51,7 +46,7 @@ class Root extends React.Component {
     return (
       <BrowserRouter>
         <AppContext.Provider value={contextElements}>
-          <Header openModalFn={this.openModal} />
+          <Header closeModalFn={this.closeModal} />
           <Switch>
             <Route exact path="/" component={RezerwacjeView} />
             <Route path="/zamowienia" component={ZamowieniaView} />
@@ -61,6 +56,7 @@ class Root extends React.Component {
               path="/politykaprywatnosci"
               component={PolitykaPrywatnosciView}
             />
+            <Route path="/zglosblad" component={ZglosBladView} />
           </Switch>
           {isModalOpen && <Modal closeModalFn={this.closeModal} />}
           <Footer />

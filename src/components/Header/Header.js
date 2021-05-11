@@ -4,11 +4,11 @@ import HeaderNavigation from "./HeaderNavigation";
 import styles from "./Header.module.scss";
 import logoImage from "../../assets/images/logo.svg";
 
-const Header = ({ openModalFn }) => (
+const Header = ({ closeModalFn }) => (
   <header className={styles.wrapper}>
     <img className={styles.logo} src={logoImage} alt="FavNote logo" />
     <HeaderNavigation />
-    <Button onClick={openModalFn} secondary>
+    <Button onClick={closeModalFn} secondary>
       dodaj
     </Button>
   </header>
