@@ -38,6 +38,7 @@ class Root extends React.Component {
 
   render() {
     const { isModalOpen } = this.state;
+
     const contextElements = {
       ...this.state,
       addItem: this.addItem,

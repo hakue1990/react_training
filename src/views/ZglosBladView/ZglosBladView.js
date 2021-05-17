@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./ZglosBladView.module.scss";
+import errorImage from "../../assets/images/table.svg";
 
 const ZglosBladView = () => {
   return (
@@ -57,7 +58,13 @@ const ZglosBladView = () => {
         </p>
       </div>
 
-      <div className={styles.sectionRight}></div>
+      <div className={styles.sectionRight}>
+        <img
+          className={styles.errorImage}
+          src={errorImage}
+          alt="FavNote logo"
+        />
+      </div>
     </div>
   );
 };

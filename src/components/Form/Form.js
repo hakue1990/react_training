@@ -15,7 +15,7 @@ const types = {
 const descriptions = {
   rezerwacje: "zarezerwuj stolik",
   zamowienia: "dodaj zamowienie",
-  zadania: "to do list",
+  zadania: "dodaj zadanie",
 };
 
 class Form extends React.Component {
@@ -83,14 +83,14 @@ class Form extends React.Component {
                 onChange={this.handleInputChange}
                 value={this.state.imie}
                 name="imie"
-                label={type === types.rezerwacje ? "Imię i Nazwisko" : "Title"}
+                label="Imię i Nazwisko"
               />
               {type !== types.zadania ? (
                 <Input
                   onChange={this.handleInputChange}
                   value={this.state.ileOsob}
                   name="ileOsob"
-                  label={type === types.rezerwacje ? "ile osób" : "Link"}
+                  label="ile osób"
                 />
               ) : null}
 
@@ -102,6 +102,7 @@ class Form extends React.Component {
                   label="data"
                 />
               ) : null}
+
               <Input
                 onChange={this.handleInputChange}
                 value={this.state.godzina}
