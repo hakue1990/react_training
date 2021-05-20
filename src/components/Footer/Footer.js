@@ -8,7 +8,7 @@ const Footer = () => {
         <div className={styles.row}>
           {/*column1*/}
           <div className={styles.col}>
-            <h4>Table Book inc</h4>
+            <h4>TableBook inc.</h4>
             <ul className={styles.list}>
               <li>736 082 373</li>
               <li>Poznań, Poland</li>
@@ -16,7 +16,7 @@ const Footer = () => {
           </div>
           {/*column2*/}
           <div className={styles.col}>
-            <h4>Stuff</h4>
+            <h4>CEO's</h4>
             <ul className={styles.list}>
               <li>Adam Hałdaś</li>
               <li>Mateusz Kokot</li>

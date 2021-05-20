@@ -1,6 +1,7 @@
 .wrapper {
   left: 0;
-  width: 100vw;
+  width: 100%;
+  background-color: #070707;
   height: 200px;
   font-size: 12px;
   position: fixed;
@@ -17,32 +18,35 @@
       display: flex;
       justify-content: space-around;
       align-items: center;
-      background-color: #39393a;
+      background-color: #070707;
       height: 140px;
       .col {
         display: flex;
         flex-direction: column;
         min-width: 30vw;
+        text-transform: uppercase;
+        font-size: 13px;
         .list {
           list-style-type: none;
           li {
             margin-top: 3px;
-            font-size: 16px;
+            font-size: 1em;
           }
         }
         h4 {
           font-size: 1.2rem;
           padding: 5px;
+          color: #f3a712;
         }
       }
     }
     .rowSecond {
-      background-color: #252422;
+      background-color: #070707;
       height: 60px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 16px;
+      font-size: 13px;
     }
   }
 }
