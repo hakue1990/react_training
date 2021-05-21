@@ -26,12 +26,12 @@ const Footer = () => {
           </div>
           {/*column3*/}
           <div className={styles.col}>
-            <h4>Well another column xD</h4>
+            <h4>Programowanie </h4>
             <ul className={styles.list}>
-              <li>I don't know yet</li>
-              <li>What</li>
-              <li>to write</li>
-              <li>here</li>
+              <li>aplikacji</li>
+              <li>webowych</li>
+              <li>Projekt</li>
+              <li>k.32.2</li>
             </ul>
           </div>
         </div>
