@@ -26,6 +26,16 @@
         min-width: 30vw;
         text-transform: uppercase;
         font-size: 13px;
+        .link {
+          text-decoration: none;
+          .header:hover {
+            color: #6457a6;
+          }
+        }
+        .link:hover {
+          cursor: pointer;
+          color: #78e0dc;
+        }
         .list {
           list-style-type: none;
           li {

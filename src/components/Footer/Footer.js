@@ -8,7 +8,13 @@ const Footer = () => {
         <div className={styles.row}>
           {/*column1*/}
           <div className={styles.col}>
-            <h4>TableBook inc.</h4>
+            <a
+              className={styles.link}
+              href="https://szulinek.pl"
+              target="_blank"
+            >
+              <h4 className={styles.header}>TableBook inc.</h4>
+            </a>
             <ul className={styles.list}>
               <li>736 082 373</li>
               <li>Poznań, Poland</li>
@@ -16,7 +22,10 @@ const Footer = () => {
           </div>
           {/*column2*/}
           <div className={styles.col}>
-            <h4>CEO's</h4>
+            <a className={styles.link}>
+              <h4 className={styles.header}>CEO's</h4>
+            </a>
+
             <ul className={styles.list}>
               <li>Adam Hałdaś</li>
               <li>Mateusz Kokot</li>
@@ -26,7 +35,9 @@ const Footer = () => {
           </div>
           {/*column3*/}
           <div className={styles.col}>
-            <h4>Programowanie </h4>
+            <a className={styles.link}>
+              <h4 className={styles.header}>Programowanie </h4>
+            </a>
             <ul className={styles.list}>
               <li>aplikacji</li>
               <li>webowych</li>
