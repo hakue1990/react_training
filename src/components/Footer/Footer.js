@@ -8,11 +8,7 @@ const Footer = () => {
         <div className={styles.row}>
           {/*column1*/}
           <div className={styles.col}>
-            <a
-              className={styles.link}
-              href="https://szulinek.pl"
-              target="_blank"
-            >
+            <a className={styles.link} href="https://szulinek.pl">
               <h4 className={styles.header}>TableBook inc.</h4>
             </a>
             <ul className={styles.list}>

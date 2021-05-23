@@ -2,10 +2,13 @@ import React from "react";
 import "./index.css";
 import AppContext from "../../context";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
+import TableBookView from "../TableBookView/TableBookView";
 import RezerwacjeView from "../RezerwacjeView/RezerwacjeView";
 import ZamowieniaView from "../ZamowieniaView/ZamowieniaView";
 import ZadaniaView from "../ZadaniaView/ZadaniaView";
 import ZglosBladView from "../ZglosBladView/ZglosBladView";
+import KontaktView from "../KontaktView/KontaktView";
+
 import PolitykaPrywatnosciView from "../PolitykaPrywatnosci/PolitykaPrywatnosciView";
 import Footer from "./../../components/Footer/Footer";
 
@@ -49,15 +52,16 @@ class Root extends React.Component {
         <AppContext.Provider value={contextElements}>
           <Header closeModalFn={this.closeModal} />
           <Switch>
-            <Route exact path="/" component={RezerwacjeView} />
+            <Route exact path="/" component={TableBookView} />
+            <Route path="/rezerwacje" component={RezerwacjeView} />
             <Route path="/zamowienia" component={ZamowieniaView} />
-
             <Route path="/zadania" component={ZadaniaView} />
             <Route
               path="/politykaprywatnosci"
               component={PolitykaPrywatnosciView}
             />
             <Route path="/zglosblad" component={ZglosBladView} />
+            <Route path="/kontakt" component={KontaktView} />
           </Switch>
           {isModalOpen && <Modal closeModalFn={this.closeModal} />}
           <Footer />

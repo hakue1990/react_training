@@ -12,6 +12,15 @@ const HeaderNavigation = () => (
           className={styles.navItemLink}
           to="/"
         >
+          TableBook
+        </NavLink>
+      </li>
+      <li className={styles.navItem}>
+        <NavLink
+          activeClassName={styles.navItemLinkActive}
+          className={styles.navItemLink}
+          to="/rezerwacje"
+        >
           rezerwacje
         </NavLink>
       </li>
@@ -40,6 +49,15 @@ const HeaderNavigation = () => (
           to="/zglosblad"
         >
           zgłoś błąd
+        </NavLink>
+      </li>
+      <li className={styles.navItem}>
+        <NavLink
+          activeClassName={styles.navItemLinkActive}
+          className={styles.navItemLink}
+          to="/kontakt"
+        >
+          kontakt
         </NavLink>
       </li>
       <li className={styles.navItem}>
