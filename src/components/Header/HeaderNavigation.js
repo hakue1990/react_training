@@ -28,29 +28,12 @@ const HeaderNavigation = () => (
         <NavLink
           activeClassName={styles.navItemLinkActive}
           className={styles.navItemLink}
-          to="/zamowienia"
+          to="/opinie"
         >
-          zamówienia
+          opinie
         </NavLink>
       </li>
-      <li className={styles.navItem}>
-        <NavLink
-          activeClassName={styles.navItemLinkActive}
-          className={styles.navItemLink}
-          to="/zadania"
-        >
-          zadania
-        </NavLink>
-      </li>
-      <li className={styles.navItem}>
-        <NavLink
-          activeClassName={styles.navItemLinkActive}
-          className={styles.navItemLink}
-          to="/zglosblad"
-        >
-          zgłoś błąd
-        </NavLink>
-      </li>
+
       <li className={styles.navItem}>
         <NavLink
           activeClassName={styles.navItemLinkActive}

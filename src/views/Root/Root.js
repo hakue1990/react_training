@@ -4,9 +4,7 @@ import AppContext from "../../context";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import TableBookView from "../TableBookView/TableBookView";
 import RezerwacjeView from "../RezerwacjeView/RezerwacjeView";
-import ZamowieniaView from "../ZamowieniaView/ZamowieniaView";
-import ZadaniaView from "../ZadaniaView/ZadaniaView";
-import ZglosBladView from "../ZglosBladView/ZglosBladView";
+import OpinieView from "../OpinieView/OpinieView";
 import KontaktView from "../KontaktView/KontaktView";
 
 import PolitykaPrywatnosciView from "../PolitykaPrywatnosci/PolitykaPrywatnosciView";
@@ -19,7 +17,6 @@ class Root extends React.Component {
   state = {
     rezerwacje: [],
     zamowienia: [],
-    zadania: [],
     isModalOpen: false,
   };
 
@@ -54,13 +51,11 @@ class Root extends React.Component {
           <Switch>
             <Route exact path="/" component={TableBookView} />
             <Route path="/rezerwacje" component={RezerwacjeView} />
-            <Route path="/zamowienia" component={ZamowieniaView} />
-            <Route path="/zadania" component={ZadaniaView} />
+            <Route path="/opinie" component={OpinieView} />
             <Route
               path="/politykaprywatnosci"
               component={PolitykaPrywatnosciView}
             />
-            <Route path="/zglosblad" component={ZglosBladView} />
             <Route path="/kontakt" component={KontaktView} />
           </Switch>
           {isModalOpen && <Modal closeModalFn={this.closeModal} />}

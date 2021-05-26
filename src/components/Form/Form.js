@@ -8,14 +8,12 @@ import Radio from "./FormRadio";
 
 const types = {
   rezerwacje: "rezerwacje",
-  zamowienia: "zamowienia",
-  zadania: "zadania",
+  opinie: "opinie",
 };
 
 const descriptions = {
   rezerwacje: "zarezerwuj stolik",
-  zamowienia: "dodaj zamowienie",
-  zadania: "dodaj zadanie",
+  opinie: "dodaj opinie",
 };
 
 class Form extends React.Component {
@@ -24,9 +22,9 @@ class Form extends React.Component {
     imie: "",
     ileOsob: "",
     data: "",
-    godzina: "",
+    tekst: "",
   };
-
+  // ZASTANOWIĆ SIĘ NAD STATE I PRZEPLYWEM DANYCH W OBU POLACH ANSTEPNIE WYSWIETLIC JE NA ODPOWIEDNIK KARTACH
   handleRadioButtonChange = (type) => {
     this.setState({
       type: type,
@@ -37,6 +35,9 @@ class Form extends React.Component {
     this.setState({
       [e.target.name]: e.target.value,
     });
+    console.log(`
+    
+    `);
   };
 
   render() {
@@ -63,20 +64,11 @@ class Form extends React.Component {
                   rezerwacja
                 </Radio>
                 <Radio
-                  id={types.zamowienia}
-                  checked={type === types.zamowienia}
-                  changeFn={() =>
-                    this.handleRadioButtonChange(types.zamowienia)
-                  }
+                  id={types.opinie}
+                  checked={type === types.opinie}
+                  changeFn={() => this.handleRadioButtonChange(types.opinie)}
                 >
-                  zamówienie
-                </Radio>
-                <Radio
-                  id={types.zadania}
-                  checked={type === types.zadania}
-                  changeFn={() => this.handleRadioButtonChange(types.zadania)}
-                >
-                  zadanie
+                  opinie
                 </Radio>
               </div>
               <Input
@@ -85,7 +77,7 @@ class Form extends React.Component {
                 name="imie"
                 label="Imię i Nazwisko"
               />
-              {type !== types.zadania ? (
+              {type !== types.opinie ? (
                 <Input
                   onChange={this.handleInputChange}
                   value={this.state.ileOsob}
@@ -105,10 +97,10 @@ class Form extends React.Component {
 
               <Input
                 onChange={this.handleInputChange}
-                value={this.state.godzina}
+                value={this.state.tekst}
                 tag="textarea"
-                name="godzina"
-                label="godzina"
+                name="tekst"
+                label="tekst"
               />
               <Button>Dodaj</Button>
             </form>
