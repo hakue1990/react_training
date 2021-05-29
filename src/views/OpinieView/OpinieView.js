@@ -4,7 +4,7 @@ import List from "../../components/List/List";
 
 const ZamowieniaView = () => (
   <AppContext.Consumer>
-    {(context) => <List items={context.zamowienia} />}
+    {(context) => <List items={context.opinie} />}
   </AppContext.Consumer>
 );
 

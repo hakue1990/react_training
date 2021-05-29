@@ -7,11 +7,11 @@ const List = ({ items }) => (
     {items.length ? (
       <ul className={styles.wrapper}>
         {items.map((item) => (
-          <ListItem key={item.title} {...item} />
+          <ListItem key={item.imie} {...item} />
         ))}
       </ul>
     ) : (
-      <h1 class={styles.noItems}>
+      <h1 className={styles.noItems}>
         Jeszcze nic nie dodałeś, dodaj coś nowego ❤️
       </h1>
     )}

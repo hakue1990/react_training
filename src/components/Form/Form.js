@@ -36,7 +36,10 @@ class Form extends React.Component {
       [e.target.name]: e.target.value,
     });
     console.log(`
-    
+    imie: ${this.state.imie}
+    ile osób: ${this.state.ileOsob}
+    data: ${this.state.data}
+    tekst: ${this.state.tekst}
     `);
   };
 

@@ -13,10 +13,11 @@ import Footer from "./../../components/Footer/Footer";
 import Header from "../../components/Header/Header";
 import Modal from "../../components/Modal/Modal";
 
+// teraz msuze wyedytowa komponent ListItem
 class Root extends React.Component {
   state = {
     rezerwacje: [],
-    zamowienia: [],
+    opinie: [],
     isModalOpen: false,
   };
 
