@@ -12,7 +12,10 @@ const List = ({ items }) => (
       </ul>
     ) : (
       <h1 className={styles.noItems}>
-        Jeszcze nic nie dodałeś, dodaj coś nowego ❤️
+        Zarezerwuj stolik lub zostaw opinie o restauracji.
+        <br />
+        <br />
+        kliknij dodaj
       </h1>
     )}
   </>

@@ -7,22 +7,10 @@ import Title from "../Title/Title";
 const ListItem = ({ imie, ileOsob, data, tekst }) => {
   return (
     <li className={styles.wrapper}>
-      {/* {image && (
-        <ImageTag
-          src={image}
-          className={image ? styles.image : styles.imageNone}
-          alt={imie}
-        />
-        
-      )}
-      <div>
-        <Title>{imie}</Title>
-        <p className={styles.description}>{description}</p>
-        {link && <Button href={link}>visit twitter page</Button>}
-      </div> */}
-
       <Title>{imie}</Title>
-      <p>{data}</p>
+      <p>liczba osób: {ileOsob}</p>
+      <p>data: {data}</p>
+      <p>tekst: {tekst}</p>
     </li>
   );
 };
@@ -35,8 +23,8 @@ ListItem.propTypes = {
 };
 
 ListItem.defaultProps = {
-  image: null,
-  link: null,
+  imie: null,
+  tekst: null,
 };
 
 export default ListItem;
