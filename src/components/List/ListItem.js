@@ -8,8 +8,8 @@ const ListItem = ({ imie, ileOsob, data, tekst }) => {
   return (
     <li className={styles.wrapper}>
       <Title>{imie}</Title>
-      <p>liczba osób: {ileOsob}</p>
-      <p>data: {data}</p>
+      {ileOsob ? <p>liczba osób: {ileOsob}</p> : null}
+      {data ? <p>data: {data}</p> : null}
       <p>tekst: {tekst}</p>
     </li>
   );
@@ -25,6 +25,8 @@ ListItem.propTypes = {
 ListItem.defaultProps = {
   imie: null,
   tekst: null,
+  ileOsob: null,
+  data: null,
 };
 
 export default ListItem;
