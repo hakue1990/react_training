@@ -1,8 +1,9 @@
 import React from "react";
 import styles from "./KontaktView.module.scss";
+import ContactForm from "../../components/ContactForm/ContactForm";
 
 const KontaktView = () => {
-  return <h1>Kontakt Viewsad</h1>;
+  return <ContactForm />;
 };
 
 export default KontaktView;
