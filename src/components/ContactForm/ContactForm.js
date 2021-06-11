@@ -1,5 +1,9 @@
 import React from "react";
 import emailjs from "emailjs-com";
+import Input from "./../Input/Input";
+import Button from "./../Button/Button";
+import styles from "./ContactForm.module.scss";
+import Title from "./../Title/Title";
 
 const ContactForm = () => {
   function sendEmail(e) {
@@ -23,15 +27,13 @@ const ContactForm = () => {
     e.target.reset();
   }
   return (
-    <form className="contact-form" onSubmit={sendEmail}>
-      <input type="hidden" name="contact_number" />
-      <label>Name</label>
-      <input type="text" name="user_name" />
-      <label>Email</label>
-      <input type="email" name="user_email" />
-      <label>Message</label>
-      <textarea name="message" />
-      <input type="submit" value="Send" />
+    <form className={styles.wrapper} onSubmit={sendEmail} autoComplete="off">
+      <Title>napisz do nas!</Title>
+      <Input name="subject" label="temat" />
+      <Input name="user_name" label="Imię i Nazwisko" />
+      <Input name="user_email" label="Email" />
+      <Input name="message" label="Wiadomość" tag="textarea" />
+      <Button>Wyślij</Button>
     </form>
   );
 };

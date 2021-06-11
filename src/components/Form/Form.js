@@ -24,7 +24,6 @@ class Form extends React.Component {
     data: "",
     tekst: "",
   };
-  // ZASTANOWIĆ SIĘ NAD STATE I PRZEPLYWEM DANYCH W OBU POLACH ANSTEPNIE WYSWIETLIC JE NA ODPOWIEDNIK KARTACH
   handleRadioButtonChange = (type) => {
     this.setState({
       type: type,
